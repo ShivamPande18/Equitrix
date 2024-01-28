@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>My Chart</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="mychart"></canvas>
+    </div>
+
+    <script>
+        var ctx = document.getElementById("mychart");  // Fix the canvas ID here
+        var mychart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Hindus', 'Muslims', 'Sikhs', 'Christian'],
+                datasets: [{
+                    label: 'Population',  // Fix the label property here
+                    data: [
+                        53533988,
+                        5846761,
+                        9824600,
+                        31617800
+                    ],
+                    backgroundColor: 'green',
+                    borderWidth: 2,
+                    borderColor: '#777',
+                    hoverBorderWidth: 4,
+                    hoverBorderColor: '#000',
+                }],
+            },
+            options: {
+                title:{
+                    display:true,
+                    text:'Population in Gujarat',
+                    fontSize:25,
+                },
+                legend:{
+                    display:false,
+                    position:'right',
+                }
+            },
+        });
+    </script>
+</body>
+</html>
